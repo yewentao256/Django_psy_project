@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>注册</title>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/register.css" />
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload=load()
+			function load(){
+				var token = getCookieToken();
+				if (token != null) {
+					window.location.href = 'index.html';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="top">
+			<a href="index.html" class="top_logo"><img src="img/logo.png" class="logo"></a>
+			<a href="index.html" class="top_a">主页</a>
+			<a href="garden.html" class="top_a">心情花园</a>
+			<a href="" class="top_a">个人中心</a>
+			<a href="login.html" class="top_user"><img src="img/user.png" class="userpic">登录</a>
+		</div>
+		<div class="content">
+			<div class="middle">
+				<div class="title" id="name_title">账户名（6-24位英文或数字）</div>
+				<input type="text" name="username" id="username" v-model="username" placeholder="请输入账户名" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+				<div class="title">密码（6-24位英文或数字）</div>
+				<input type="password" name="password" id="password" v-model="password" maxlength="24" placeholder="请输入密码" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+				<div class="title">确认密码</div>
+				<input type="password" name="password" id="repassword" v-model="repassword" placeholder="请再次输入密码" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+				<div class="submit" @click="register()">注册</div>
+				<a href="login.html" class="login">已有账号？去登录</a>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="row1">
+				<span>栀语舍·温心小栈</span>
+				<a href="" class="weekly">心理周报</a>
+				<a href="" class="contact">联系我们</a>
+				<a href="" class="about">关于我们</a>
+			</div>
+			<div class="row2">
+				<span>2020-5</span>
+			</div>
+		</div>
+		<script src="js/register.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

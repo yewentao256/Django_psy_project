@@ -1,0 +1,280 @@
+body {
+	margin: 0;
+	padding: 0;
+	min-width: 720px;
+	position: relative;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Chrome/Safari/Opera */
+	-khtml-user-select: none; /* Konqueror */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+* {
+	-webkit-user-drag: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+body::after {
+	min-width: 720px;
+	min-height: 722px;
+	content: "";
+	background: url(../img/background.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	opacity: 0.3;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -2;
+	filter: blur(5px);
+}
+
+.top {
+	height: 54px;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+}
+
+.top a {
+	text-align: center;
+	display: inline-block;
+	font-size: 11px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(102, 102, 102, 1);
+}
+
+a * {
+	vertical-align: middle;
+}
+
+.top_logo {
+	margin-left: 82.5px;
+	margin-top: 4px;
+}
+
+.logo {
+	width: 73px;
+	height: 47px;
+}
+
+.top_a {
+	margin-right: 27.5px;
+	padding-top: 18px;
+	padding-bottom: 14.5px;
+	vertical-align: bottom;
+}
+
+.top_user {
+	margin-top: 4px;
+	float: right;
+	margin-right: 108px;
+	padding-top: 14px;
+	padding-bottom: 13.5px;
+	vertical-align: bottom;
+}
+
+.userpic {
+	width: 20px;
+	height: 20px;
+	margin-right: 6.5px;
+}
+
+.content {
+	min-height: 594px;
+	position: relative;
+}
+
+.bottom {
+	overflow: hidden;
+	width: 100%;
+	height: 74px;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+	border-radius: 3px;
+}
+
+.row1 {
+	height: 47px;
+	border-bottom: 2px solid rgba(245, 245, 245, 1);
+}
+
+.row1 * {
+	vertical-align: middle;
+	margin-top: 8px;
+}
+
+.row1 span {
+	margin-left: 186px;
+	display: inline-block;
+	height: 30px;
+	font-size: 11px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(77, 77, 77, 1);
+	line-height: 30px;
+	letter-spacing: 1px;
+}
+
+.row1 a {
+	display: inline-block;
+	font-size: 8px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(102, 102, 102, 1);
+	line-height: 30px;
+}
+
+.weekly,
+.contact {
+	margin-left: 22.5px;
+}
+
+.about,
+.contact {
+	float: right;
+}
+
+.contact {
+	margin-right: 139px;
+}
+
+.row2 {
+	height: 30px;
+	text-align: center;
+	font-size: 7px;
+	font-family: Helvetica;
+	color: rgba(179, 179, 179, 1);
+}
+
+.row2 * {
+	line-height: 27px;
+}
+
+.middle {
+	margin-top: 27.5px;
+	margin-left: auto;
+	margin-right: auto;
+	width:555px;
+}
+.consultant{
+	font-size: 0;
+	width:100%;
+	height:165px;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 1px 3px 0px rgba(0,0,0,0.05);
+	border-radius:3px;
+	margin-bottom: 15px;
+}
+.left,.mid,.right{
+	display: inline-block;
+	vertical-align: top;
+}
+.left{
+	width: 175px;
+	height: 100%;
+	border-right: 1px solid #F5F5F5;
+}
+.left img{
+	margin: 20px;
+	width:125px;
+	height:125px;
+	border-radius:3px;
+}
+.mid{
+	width:175px;
+	height: 100%;
+	border-right: 1px solid #F5F5F5;
+}
+.name{
+	margin-top: 29px;
+	margin-left: 23px;
+	width:104px;
+	height:21px;
+	font-size:21px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(102,102,102,1);
+	line-height:21px;
+}
+.grade{
+	margin-top: 10.5px;
+}
+.grade,.address,.mobile,.expertise,.training{
+	margin-left: 23px;
+	height: 15px;
+	font-size:7px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.5);
+	line-height:15px;
+}
+.grade,.address,.mobile{
+	overflow: hidden;
+	 white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.expertise span{
+	vertical-align: top;
+	width: 116.5px;
+	word-break: break-all;
+	overflow : hidden;
+	display: -webkit-inline-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	
+}
+.right{
+	width: 203px;
+	height: 100%;
+	position: relative;
+}
+.training{
+	margin-top: 25px;
+	height: auto;
+}
+
+.training div{
+	width: 90%;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 8;
+	overflow: hidden;
+	line-height:11px;
+}
+.button{
+	margin-top: 9.5px;
+	width: 100%;
+	text-align: center;
+	font-size:7px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	line-height:17px;
+	letter-spacing:1px;
+	position: absolute;
+	bottom: 14.5px;
+}
+.consultation,.appointment{
+	cursor: pointer;
+	display: inline-block;
+	width:50px;
+	height:17px;
+	border-radius: 15px;
+}
+.consultation{
+	background-color: #0091FF;
+	color:rgba(255,255,255,1);
+	border: 1px solid #0091FF;
+	margin-right: 15px;
+}
+.appointment{
+	color: #0091FF;
+	border: 1px solid #F5F5F5;
+}

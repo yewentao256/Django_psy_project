@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>温心小栈</title>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="top">
+			<a href="index.html" class="top_logo"><img src="img/logo.png" class="logo"></a>
+			<a href="index.html" class="top_a">主页</a>
+			<a href="garden.html" class="top_a">心情花园</a>
+			<a href="" class="top_a">个人中心</a>
+			<a :href="user_url" class="top_user"><img :src="avatar" class="userpic">{{username}}</a>
+		</div>
+		<div class="content">
+			<div class="middle">
+				<div class="swiper">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<p class="swiper_title">开始您的“心理护航”</p>
+								<p class="swiper_subtitle">守护你的“隐形翅膀”</p>
+							</div>
+							<div class="swiper-slide">
+								<p class="swiper_title">开始您的“心理护航”</p>
+								<p class="swiper_subtitle">守护你的“隐形翅膀”</p>
+							</div>
+							<div class="swiper-slide">
+								<p class="swiper_title">开始您的“心理护航”</p>
+								<p class="swiper_subtitle">守护你的“隐形翅膀”</p>
+							</div>
+						</div>
+						<!-- 如果需要分页器 -->
+						<div class="swiper-pagination"></div>
+
+						<!-- 如果需要导航按钮 -->
+						<div class="swiper-button-prev"><img src="img/left.png"></div>
+						<div class="swiper-button-next"><img src="img/right.png"></div>
+					</div>
+
+				</div>
+				<a href="test.html" class="test">
+					<p class="title">点击进行“心理测试”</p>
+					<p class="subtitle">倾听·诉说·解惑</p>
+				</a>
+				<a href="garden.html" class="garden">
+					<p class="title">点击进入“心情花园””</p>
+					<p class="subtitle">倾听·诉说·解惑</p>
+				</a>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="row1">
+				<span>栀语舍·温心小栈</span>
+				<a href="" class="weekly">心理周报</a>
+				<a href="" class="contact">联系我们</a>
+				<a href="" class="about">关于我们</a>
+			</div>
+			<div class="row2">
+				<span>2020-5</span>
+			</div>
+		</div>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/top.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

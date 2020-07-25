@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>心理测试</title>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/test.css" />
+	</head>
+	<body>
+		<div class="top">
+			<a href="index.html" class="top_logo"><img src="img/logo.png" class="logo"></a>
+			<a href="index.html" class="top_a">主页</a>
+			<a href="garden.html" class="top_a">心情花园</a>
+			<a href="" class="top_a">个人中心</a>
+			<a :href="user_url" class="top_user"><img :src="avatar" class="userpic">{{username}}</a>
+		</div>
+		<div class="content">
+			<div class="middle">
+				<div class="questions">
+					<div class="question" v-for="(item,index) in questions" :key="item.topic_id">
+						<div class="title">{{'Q'+(index+1)+'：'+item.topic}}</div>
+						<div class="options">
+							<label v-for="(opt,optindex) in item.options" :key="opt.option_id">
+								<input type="radio" :name="'options'+index" :value="opt.option_id" v-model="answers[index].option_id"/>
+								{{String.fromCharCode(65+optindex)}}{{'.'+opt.content}}
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="submit" @click="uploadTest()">提交</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="row1">
+				<span>栀语舍·温心小栈</span>
+				<a href="" class="weekly">心理周报</a>
+				<a href="" class="contact">联系我们</a>
+				<a href="" class="about">关于我们</a>
+			</div>
+			<div class="row2">
+				<span>2020-5</span>
+			</div>
+		</div>
+		<script src="js/top.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/test.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

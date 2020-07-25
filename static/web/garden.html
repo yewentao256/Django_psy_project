@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>心情花园</title>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload=load()
+			function load(){
+				var token = getCookieToken();
+				if (token == null) {
+					window.location.href = 'login.html';
+					return;
+				}
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/garden.css" />
+	</head>
+	<body>
+		<div class="top">
+			<a href="index.html" class="top_logo"><img src="img/logo.png" class="logo"></a>
+			<a href="index.html" class="top_a">主页</a>
+			<a href="garden.html" class="top_a">心情花园</a>
+			<a href="" class="top_a">个人中心</a>
+			<a :href="user_url" class="top_user"><img :src="avatar" class="userpic">{{username}}</a>
+		</div>
+		<div class="content">
+			<div class="middle">
+				<div class="up">
+					<div class="left">
+						<div class="info">
+							<img :src="avatar" class="avatar">
+							<span>{{username}}</span>
+							<img src="img/pen.png" class="edit">
+						</div>
+						<div id="private" :class="private_class" @click="toPrivate()">
+							<div class="privateimg"></div>
+							<span class="title">我的花园</span>
+							<span class="number">{{private_total}}</span>
+						</div>
+						<div id="public" :class="public_class" @click="toPublic()">
+							<div class="publicimg"></div>
+							<span class="title">公共花园</span>
+							<span class="number">{{public_total}}</span>
+						</div>
+					</div>
+					<div class="right">
+						<textarea rows="5" cols="1" placeholder="请在此处输入你的心语吧～" maxlength="140" v-model="msg_content"></textarea>
+						<div class="button">
+							<div class="mood">
+								<label><input type="radio" name="mood_option" value="0" v-model="mood" />开心</label>
+								<label><input type="radio" name="mood_option" value="1" v-model="mood" />平淡无奇</label>
+								<label><input type="radio" name="mood_option" value="2" v-model="mood" />难过</label>
+							</div>
+							<div class="submit" @click="publishMsg()"><img src="img/shang.png"></div>
+							<div class="niming" v-show="type==1&&anonymity==1" @click="toggleAnonymity()">匿名<img src="img/yuan.png"></div>
+							<div class="buniming" v-show="type==1&&anonymity==0" @click="toggleAnonymity()"><img src="img/yuan.png">匿名</div>
+						</div>
+					</div>
+				</div>
+				<div class="message_area" v-show="type==0">
+					<div class="message" v-for="(item,index) in private_list" :key="item.id">
+						<div class="userinfo">
+							<img :src="avatar" class="msg_avatar">
+							<div class="msg_info">
+								<div class="msg_name">{{username}}</div>
+								<div class="msg_time">{{getTime(item.time)}}</div>
+							</div>
+						</div>
+						<div class="msg_content">{{item.content}}</div>
+					</div>
+				</div>
+				<div class="message_area" v-show="type==1">
+					<div class="message" v-for="(item,index) in public_list" :key="item.id">
+						<div class="userinfo">
+							<img :src="base_url+item.avatar" class="msg_avatar">
+							<div class="msg_info">
+								<div class="msg_name">{{item.user_nickname}}</div>
+								<div class="msg_time">{{getTime(item.time)}}</div>
+							</div>
+						</div>
+						<div class="msg_content">{{item.content}}</div>
+						<div class="comment">
+							<img src="img/public2.png">
+							评论区
+						</div>
+						<div class="cmt_area" v-for="(cmt,cmt_index) in item.comment_list">
+							<img :src="base_url+cmt.avatar" class="cmt_avatar">
+							<div class="cmt_details">
+								<div class="cmt_info">
+									<div class="cmt_name">{{cmt.user_nickname}}</div>
+									<div class="cmt_time">{{getTime(cmt.time)}}</div>
+								</div>
+								<div class="cmt_content">{{cmt.content}}</div>
+							</div>
+						</div>
+						<div class="your_cmt">
+							<img :src="avatar">
+							<textarea rows="5" cols="1" placeholder="请输入你的评论......" maxlength="140"></textarea>
+						</div>
+						<div class="cmt_btn">
+							<div class="submit" @click="publishCmt($event,item.id)"><img src="img/shang.png"></div>
+							<div class="niming" v-show="type==1&&anonymity==1" @click="toggleAnonymity()">匿名<img src="img/yuan.png"></div>
+							<div class="buniming" v-show="type==1&&anonymity==0" @click="toggleAnonymity()"><img src="img/yuan.png">匿名</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="row1">
+				<span>栀语舍·温心小栈</span>
+				<a href="" class="weekly">心理周报</a>
+				<a href="" class="contact">联系我们</a>
+				<a href="" class="about">关于我们</a>
+			</div>
+			<div class="row2">
+				<span>2020-5</span>
+			</div>
+		</div>
+		<script src="js/top.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/garden.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
